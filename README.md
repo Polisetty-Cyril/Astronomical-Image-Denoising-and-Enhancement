@@ -61,16 +61,13 @@ Images are obtained from the [Hubble Legacy Archive](https://hla.stsci.edu/), wi
 
 ```
 Astronomical-Image-Denoising-and-Enhancement/
-├── notebooks/          # Jupyter/Colab notebooks
-│   ├── preprocessing.ipynb
-│   ├── classical_methods.ipynb
-│   └── deep_learning.ipynb
-├── data/              # Sample FITS images
-│   ├── raw/
-│   └── processed/
-├── models/            # Trained model weights
-├── src/               # Source code modules
-├── results/           # Output images and metrics
+├── Notebooks/         # Jupyter notebooks with filter implementations
+│   ├── Gaussian_Filter.ipynb     # Gaussian filtering for noise reduction
+│   ├── Median_Filter.ipynb       # Median filtering to remove salt-and-pepper noise
+│   └── WaveLet_Filter.ipynb      # Wavelet-based denoising
+├── DataSet/           # Hubble Space Telescope FITS images
+│   └── hlsp_heritage_hst_acs-wfc_m51_f555w_v1_drz_sci.fits
+├── results/           # Processed images and analysis
 └── README.md
 ```
 
@@ -116,16 +113,16 @@ plt.show()
 
 ## 📊 Methodology
 
-### Classical Approaches
-- Gaussian filtering
-- Median filtering
-- Wiener filtering
-- Wavelet denoising
+### Classical Approaches (Implemented)
+- **Gaussian Filtering** - Smooths noise using Gaussian kernel convolution ([Gaussian_Filter.ipynb](Notebooks/Gaussian_Filter.ipynb))
+- **Median Filtering** - Removes salt-and-pepper noise while preserving edges ([Median_Filter.ipynb](Notebooks/Median_Filter.ipynb))
+- **Wavelet Denoising** - Multi-scale analysis using wavelet transforms ([WaveLet_Filter.ipynb](Notebooks/WaveLet_Filter.ipynb))
 
-### Deep Learning Approaches
-- **U-Net Architecture** - Encoder-decoder with skip connections
-- **Convolutional Autoencoders** - Learned feature extraction
-- **Residual Learning** - Direct noise prediction
+### Deep Learning Approaches (Planned)
+- **Self-Supervised Learning** - Noise2Noise and Noise2Void techniques for denoising without clean target images
+- **U-Net Architecture** - Encoder-decoder with skip connections for image-to-image translation
+- **Convolutional Autoencoders** - Learned feature extraction and reconstruction
+- **Residual Learning** - Direct noise prediction and removal
 
 ## 📈 Results
 
